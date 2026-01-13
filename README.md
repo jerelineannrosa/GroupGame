@@ -1,5 +1,5 @@
 # GroupGame
-Members: Rosa, Cañete.
+Members: Rosa, Jereline Ann, Cañete, Yvhan.
 
 Shadow Labyrinth is a minimalist horror maze game where the player must escape a dark labyrinth using only brief moments of light. The maze is mostly hidden in darkness, and the player can only see their current position, creating tension and uncertainty with every move.
 
