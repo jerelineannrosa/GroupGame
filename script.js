@@ -164,7 +164,7 @@ function lightUp() {
       if (mazeLayout[playerPos.y][playerPos.x] === 0) break;
     }
   }
-  // update classes
+  // update classes several times
   cells.forEach((row, y) => row.forEach((cell, x) => {
     if (mazeLayout[y][x] === 1) {
       cell.classList.add("wall");
