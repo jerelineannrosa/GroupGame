@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,6 +7,16 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <div id="controls">
+  <button onclick="movePlayer(0,-1)">↑</button>
+  <div>
+    <button onclick="movePlayer(-1,0)">←</button>
+    <button onclick="movePlayer(1,0)">→</button>
+  </div>
+  <button onclick="movePlayer(0,1)">↓</button>
+</div>
+
 
   <div id="maze"></div>
 

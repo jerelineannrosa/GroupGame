@@ -1,4 +1,4 @@
- body {
+body {
   background: black;
   display: flex;
   justify-content: center;
@@ -31,4 +31,19 @@
 
 .exit {
   background: green;
+}
+#controls {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 999;
+}
+
+#controls button {
+  width: 70px;
+  height: 70px;
+  font-size: 30px;
+  margin: 5px;
 }

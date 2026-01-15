@@ -194,3 +194,25 @@ function startLightUp() {
 
 createMaze();
 startLightUp();
+
+function movePlayer(dx, dy) {
+  let x = playerPos.x + dx;
+  let y = playerPos.y + dy;
+
+  if (
+    y >= 0 && y < rows &&
+    x >= 0 && x < cols &&
+    mazeLayout[y][x] === 0
+  ) {
+    playerPos = { x, y };
+  } else {
+    playerPos = { x: 1, y: 1 };
+    playScarySound();
+    const jumpscare = document.getElementById('jumpscare');
+    jumpscare.style.display = 'flex';
+    setTimeout(() => jumpscare.style.display = 'none', 1000);
+  }
+
+  drawPlayer();
+  checkWin();
+}
