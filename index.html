@@ -8,20 +8,42 @@
 </head>
 <body>
 
-  <div id="controls">
-  <button onclick="movePlayer(0,-1)">↑</button>
-  <div>
-    <button onclick="movePlayer(-1,0)">←</button>
-    <button onclick="movePlayer(1,0)">→</button>
-  </div>
-  <button onclick="movePlayer(0,1)">↓</button>
+<!-- MENU -->
+<div id="menu">
+  <h1>Echo Game</h1>
+  <button onclick="startGame()">PLAY</button>
+  <button onclick="showHowTo()">HOW TO PLAY</button>
 </div>
 
+<!-- HOW TO PLAY -->
+<div id="howTo">
+  <h2>How To Play</h2>
+  <p>
+    Move using arrow keys or touch buttons.<br>
+    Avoid walls — hitting one resets you.<br>
+    Reach the green tile to escape.<br>
+    The maze lights up briefly.
+  </p>
+  <button onclick="backToMenu()">BACK</button>
+</div>
 
+<!-- GAME -->
+<div id="game">
   <div id="maze"></div>
 
-  <div id="jumpscare" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:red; color:white; font-size:100px; text-align:center; align-items:center; justify-content:center; z-index:1000;">BOO!</div>
+  <div id="controls">
+    <button onclick="movePlayer(0,-1)">↑</button>
+    <div>
+      <button onclick="movePlayer(-1,0)">←</button>
+      <button onclick="movePlayer(1,0)">→</button>
+    </div>
+    <button onclick="movePlayer(0,1)">↓</button>
+  </div>
+</div>
 
-  <script src="script.js"></script>
+<!-- JUMPSCARE -->
+<div id="jumpscare">BOO!</div>
+
+<script src="script.js"></script>
 </body>
 </html>
