@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Echo Game</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <!-- MENU -->
 <div id="menu">
   <h1>Echo Game</h1>
+
+  <select id="difficulty">
+    <option value="easy">Easy</option>
+    <option value="normal" selected>Normal</option>
+    <option value="hard">Hard</option>
+  </select>
+
   <button onclick="startGame()">PLAY</button>
   <button onclick="showHowTo()">HOW TO PLAY</button>
 </div>
@@ -19,9 +26,9 @@
 <div id="howTo">
   <h2>How To Play</h2>
   <p>
-    Move using arrow keys or touch buttons.<br>
+    Move using arrow keys or buttons.<br>
     Avoid walls — hitting one resets you.<br>
-    Reach the green tile to escape.<br>
+    Reach the green tile before time runs out.<br>
     The maze lights up briefly.
   </p>
   <button onclick="backToMenu()">BACK</button>
@@ -29,11 +36,15 @@
 
 <!-- GAME -->
 <div id="game">
+  <div id="hud">
+    <span id="levelText">Level: 1</span>
+    <span id="timeText">Time: 60</span>
+  </div>
+
   <div id="maze"></div>
 
   <div id="controls">
-    <!-- key controls -->
-    <button onclick="movePlayer(0,-1)">↑</button> 
+    <button onclick="movePlayer(0,-1)">↑</button>
     <div>
       <button onclick="movePlayer(-1,0)">←</button>
       <button onclick="movePlayer(1,0)">→</button>
@@ -42,8 +53,8 @@
   </div>
 </div>
 
-<!-- this indicate that you're going back to start, in short reset game -->
-<div id="jumpscare">BOO!</div> 
+<!-- JUMPSCARE -->
+<div id="jumpscare">BOO!</div>
 
 <script src="script.js"></script>
 </body>

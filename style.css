@@ -3,8 +3,10 @@ body {
   background: black;
   color: white;
   font-family: sans-serif;
+  overflow: hidden;
 }
 
+/* MENUS */
 #menu, #howTo {
   position: fixed;
   inset: 0;
@@ -18,18 +20,39 @@ body {
   display: none;
 }
 
-button {
-  font-size: 20px;
-  padding: 12px 25px;
-  margin: 10px;
+h1 {
+  margin-bottom: 10px;
 }
 
+/* BUTTONS & SELECT */
+button, select {
+  font-size: 18px;
+  padding: 10px 22px;
+  margin: 10px;
+  border: none;
+  border-radius: 6px;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* HUD */
+#hud {
+  display: flex;
+  justify-content: space-between;
+  width: 480px;
+  margin: 10px auto;
+  font-size: 18px;
+}
+
+/* MAZE */
 #maze {
   display: grid;
   grid-template-columns: repeat(15, 32px);
   gap: 3px;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .cell {
@@ -42,6 +65,7 @@ button {
   background: #333;
 }
 
+/* CONTROLS */
 #controls {
   position: fixed;
   bottom: 20px;
@@ -56,8 +80,8 @@ button {
   font-size: 28px;
 }
 
+/* JUMPSCARE */
 #jumpscare {
-   
   display: none;
   position: fixed;
   inset: 0;
@@ -68,3 +92,4 @@ button {
   justify-content: center;
   z-index: 999;
 }
+
