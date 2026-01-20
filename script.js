@@ -24,6 +24,7 @@ let gameStarted = false;
 let currentDifficulty = "normal";
 
 /* ---------- MENU ---------- */
+// Function to start the game with selected difficulty
 function startGame() {
   currentDifficulty = document.getElementById("difficulty").value;
 
@@ -38,17 +39,20 @@ function startGame() {
   lightInterval = setInterval(lightUp, 10000);
 }
 
+// Function to show the how-to instructions
 function showHowTo() {
   document.getElementById("menu").style.display = "none";
   document.getElementById("howTo").style.display = "flex";
 }
 
+// Function to go back to the main menu
 function backToMenu() {
   document.getElementById("howTo").style.display = "none";
   document.getElementById("menu").style.display = "flex";
 }
 
 /* ---------- LEVEL ---------- */
+// Function to set up the current level, reset player, generate maze, and start timer
 function setupLevel() {
   playerPos = { x: 1, y: 1 };
 
@@ -70,6 +74,7 @@ function setupLevel() {
   }, 1000);
 }
 
+// Function to generate the maze layout with borders, guaranteed path, and random walls
 /* ---------- MAZE GENERATION ---------- */
 function generateMaze() {
   mazeLayout = Array.from({ length: rows }, () => Array(cols).fill(1));
@@ -113,7 +118,7 @@ function generateMaze() {
     }
   }
 }
-
+//Function to create and render the maze grid in the DOM (only once)
 /* ---------- GRID ---------- */
 // only create the grid once
 function createMaze() {
@@ -134,6 +139,7 @@ function createMaze() {
     cells.push(row);
   }
 }
+// Function to draw the player on the maze grid
 
 /* ---------- PLAYER ---------- */
 function drawPlayer() {
@@ -148,6 +154,7 @@ function drawPlayer() {
       }
     })
   );
+// Function to move the player by delta x and y, handle collisions and win check
 }
 
 function movePlayer(dx, dy) {
@@ -167,6 +174,7 @@ function movePlayer(dx, dy) {
   checkWin();
 }
 
+// Event listener for keyboard input to move the player
 document.addEventListener("keydown", e => {
   if (e.key === "ArrowUp") movePlayer(0, -1);
   if (e.key === "ArrowDown") movePlayer(0, 1);
@@ -175,6 +183,7 @@ document.addEventListener("keydown", e => {
 });
 
 /* ---------- EVENTS ---------- */
+// Function to check if the player has reached the exit and advance level
 function checkWin() {
   if (playerPos.x === exitPos.x && playerPos.y === exitPos.y) {
     level++;
@@ -182,6 +191,7 @@ function checkWin() {
   }
 }
 
+// Function to handle game over when time runs out
 function gameOver() {
   clearInterval(timerInterval);
   clearInterval(lightInterval);
@@ -193,6 +203,7 @@ function gameOver() {
   document.getElementById("menu").style.display = "flex";
 }
 
+// Function to trigger a jumpscare effect when hitting a wall
 function triggerJumpscare() {
   const j = document.getElementById("jumpscare");
   j.style.display = "flex";
@@ -204,6 +215,7 @@ function triggerJumpscare() {
 
 
 /* ---------- LIGHT REVEAL ---------- */
+// Function to temporarily light up the maze, revealing walls and exit
 function lightUp() {
   if (!gameStarted) return;
 
