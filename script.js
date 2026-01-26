@@ -6,9 +6,9 @@ const cols = 15;
 const exitPos = { x: 13, y: 13 };
 
 const difficultySettings = {
-  easy:   { wallChance: 0.12 },
+  easy: { wallChance: 0.12 },
   normal: { wallChance: 0.22 },
-  hard:   { wallChance: 0.35 }
+  hard: { wallChance: 0.35 }
 };
 
 /* ---------- GAME STATE ---------- */
@@ -154,7 +154,7 @@ function drawPlayer() {
       }
     })
   );
-// Function to move the player by delta x and y, handle collisions and win check
+  // Function to move the player by delta x and y, handle collisions and win check
 }
 
 function movePlayer(dx, dy) {
